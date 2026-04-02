@@ -11,8 +11,8 @@ env:
   CONFIG_FILE: N1/Lede/2025-0922.config
   DIY_P1_SH: N1/Lede/diy-part1.sh
   DIY_P2_SH: N1/Lede/diy-part2.sh
-  CUSTOM_FILES_DIR: N1/Lede/23.05/files
-  LOG_PATH: N1/Lede/23.05/logs.txt
+  CUSTOM_FILES_DIR: N1/Lede/files
+  LOG_PATH: N1/Lede/logs.txt
   TZ: Asia/Shanghai
   UPLOAD_RELEASE: 'true'
   DEBIAN_FRONTEND: noninteractive
