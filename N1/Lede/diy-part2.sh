@@ -24,10 +24,18 @@ rm -rf package/feeds/packages/onionshare-cli
 sed -i '/mjpg-streamer/d' .config 2>/dev/null || true
 sed -i '/onionshare/d' .config 2>/dev/null || true
 
+rm -rf feeds/telephony/freeswitch
+rm -rf feeds/telephony/spandsp3
+rm -rf package/feeds/telephony/freeswitch
+rm -rf package/feeds/telephony/spandsp3
+rm -rf feeds/kenzo/luci-theme-alpha
+rm -rf package/feeds/kenzo/luci-theme-alpha
+
 
 # 克隆 Passwall 2
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 rm -rf package/passwall-packages/shadowsocksr-libev
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 
 
