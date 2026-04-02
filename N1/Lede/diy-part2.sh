@@ -1,13 +1,9 @@
 #!/bin/bash
 set -e  # 任何命令失败立即退出，防止静默跳过错误
 
-# 修改IP   第一行19.07的路径   第二行23.05的路径
-#sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/luci2/bin/config_generate
-
-# 修改主机名
-#sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
-sed -i 's/LEDE/OpenWrt/g' package/base-files/luci2/bin/config_generate
+# 修改IP及主机名
+sed -i 's/192.168.1.1/192.168.123.2/g' package/base-files/files/bin/config_generate
+sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 
 # 彻底清理 feeds 自带的冲突项
 rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
