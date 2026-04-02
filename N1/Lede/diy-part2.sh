@@ -24,19 +24,35 @@ rm -rf package/feeds/packages/onionshare-cli
 sed -i '/mjpg-streamer/d' .config 2>/dev/null || true
 sed -i '/onionshare/d' .config 2>/dev/null || true
 
+# 删除 telephony 中有问题的包
 rm -rf feeds/telephony/freeswitch
 rm -rf feeds/telephony/spandsp3
 rm -rf package/feeds/telephony/freeswitch
 rm -rf package/feeds/telephony/spandsp3
+
+# 消除 WARNING：删除依赖已删除的 freeswitch/spandsp3 的下游包
+rm -rf feeds/telephony/freeswitch-mod-bcg729
+rm -rf feeds/telephony/freetdm
+rm -rf feeds/telephony/rtpengine
+rm -rf feeds/telephony/baresip
+rm -rf package/feeds/telephony/freeswitch-mod-bcg729
+rm -rf package/feeds/telephony/freetdm
+rm -rf package/feeds/telephony/rtpengine
+rm -rf package/feeds/telephony/baresip
+
+# 消除 WARNING：删除引发 nikki↔firewall4 循环依赖的 luci-app-fchomo
+find feeds/ package/feeds/ -type d -name "luci-app-fchomo" 2>/dev/null | xargs rm -rf
+sed -i '/luci-app-fchomo/d' .config 2>/dev/null || true
+
 rm -rf feeds/kenzo/luci-theme-alpha
 rm -rf package/feeds/kenzo/luci-theme-alpha
 
 
 # 克隆 Passwall 2
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
 rm -rf package/passwall-packages/shadowsocksr-libev
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
-git clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
+git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 
 
 # 其他插件
