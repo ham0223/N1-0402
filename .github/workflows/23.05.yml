@@ -196,7 +196,7 @@ jobs:
         [ -d /opt/openwrt_packit/output ] && mv /opt/openwrt_packit/output/* /workdir/upload/
         DESC_FILE="/workdir/upload/release_description.txt"
         {
-          echo "- **编译源码**：https://github.com/immortalwrt/immortalwrt/tree/openwrt-25.12"
+          echo "- **编译源码**：https://github.com/coolsnowwolf/lede"
           echo "- **网关地址**：192.168.123.2"
           echo "- **登录账户**：root"
           echo "- **登录密码**：password"
