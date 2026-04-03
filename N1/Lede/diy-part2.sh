@@ -35,6 +35,8 @@ rm -rf feeds/telephony/freeswitch-mod-bcg729
 rm -rf feeds/telephony/freetdm
 rm -rf feeds/telephony/rtpengine
 rm -rf feeds/telephony/baresip
+rm -rf feeds/telephony/baresip-apps
+rm -rf package/feeds/telephony/baresip-apps
 rm -rf package/feeds/telephony/freeswitch-mod-bcg729
 rm -rf package/feeds/telephony/freetdm
 rm -rf package/feeds/telephony/rtpengine
@@ -50,7 +52,7 @@ rm -rf package/feeds/kenzo/luci-theme-alpha
 
 # 克隆 Passwall 2
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
-rm -rf package/passwall-packages/shadowsocksr-libev
+# rm -rf package/passwall-packages/shadowsocksr-libev
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
 git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 
