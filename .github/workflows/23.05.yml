@@ -8,7 +8,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: N1/Lede/LE-feeds.conf.default
-  CONFIG_FILE: N1/Immortalwrt/24.10/2025-0922-mini.config
+  CONFIG_FILE: N1/Lede/2025-0922-mini.config
   DIY_P1_SH: N1/Lede/diy-part1.sh
   DIY_P2_SH: N1/Lede/diy-part2.sh
   CUSTOM_FILES_DIR: N1/Lede/files
@@ -208,7 +208,7 @@ jobs:
             echo "- 常规更新发布"
           fi
         } > $DESC_FILE
-        echo "release_tag=N1-23.05mini_$(date +%Y%m%d)" >> $GITHUB_OUTPUT
+        echo "release_tag=N1-23.05_$(date +%Y%m%d)" >> $GITHUB_OUTPUT
         echo "release_date=$(date '+%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
         echo "描述文件生成完成：$DESC_FILE"
         echo "::endgroup::"
