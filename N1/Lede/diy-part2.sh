@@ -46,11 +46,15 @@ rm -rf feeds/kenzo/luci-theme-alpha
 rm -rf package/feeds/kenzo/luci-theme-alpha
 
 
-# 克隆 Passwall 2
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
-# rm -rf package/passwall-packages/shadowsocksr-libev
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall.git package/passwall
-git clone --depth=1 https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
+# 克隆 Passwall
+# 移除 openwrt feeds 自带的核心库
+rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
+# 移除 openwrt feeds 过时的luci版本
+rm -rf feeds/luci/applications/luci-app-passwall
+rm -rf feeds/luci/applications/luci-app-passwall2
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall-luci
+git clone https://github.com/Openwrt-Passwall/openwrt-passwall2 package/passwall2-luci
 
 
 # 其他插件
