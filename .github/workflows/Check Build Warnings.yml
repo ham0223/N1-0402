@@ -31,7 +31,7 @@ jobs:
       - name: Run diy-part2.sh
         working-directory: openwrt
         run: |
-          bash $GITHUB_WORKSPACE/diy-part2.sh
+          bash $GITHUB_WORKSPACE/N1/Lede/diy-part2.sh
 
       - name: Collect warnings
         working-directory: openwrt
