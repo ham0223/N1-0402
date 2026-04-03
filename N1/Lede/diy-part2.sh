@@ -42,10 +42,6 @@ rm -rf package/feeds/telephony/freetdm
 rm -rf package/feeds/telephony/rtpengine
 rm -rf package/feeds/telephony/baresip
 
-# 消除 WARNING：删除引发 nikki↔firewall4 循环依赖的 luci-app-fchomo
-find feeds/ package/feeds/ -type d -name "luci-app-fchomo" 2>/dev/null | xargs rm -rf
-sed -i '/luci-app-fchomo/d' .config 2>/dev/null || true
-
 rm -rf feeds/kenzo/luci-theme-alpha
 rm -rf package/feeds/kenzo/luci-theme-alpha
 
