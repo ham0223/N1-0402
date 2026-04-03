@@ -17,6 +17,7 @@ env:
   UPLOAD_RELEASE: 'true'
   DEBIAN_FRONTEND: noninteractive
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+  VERSION_TAG: '24.10'
 
 jobs:
   build:
@@ -103,9 +104,9 @@ jobs:
       uses: actions/cache@v5
       with:
         path: ~/.ccache
-        key: ${{ runner.os }}-ccache-${{ hashFiles(env.CONFIG_FILE) }}
+        key: ${{ runner.os }}-ccache-${{ env.VERSION_TAG }}-${{ hashFiles(env.CONFIG_FILE) }}
         restore-keys: |
-          ${{ runner.os }}-ccache-
+          ${{ runner.os }}-ccache-${{ env.VERSION_TAG }}-
 
     - name: 加载 DIY 1 与更新
       run: |
