@@ -31,7 +31,7 @@ sed -i '/onionshare/d' .config 2>/dev/null || true
 
 # 4. 克隆 Passwall 2
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages.git package/passwall-packages
-rm -rf package/passwall-packages/shadowsocksr-libev
+# rm -rf package/passwall-packages/shadowsocksr-libev
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall2.git package/passwall2
 
 
