@@ -8,7 +8,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: N1/Lede/LE-feeds.conf.default
-  CONFIG_FILE: N1/Lede/2025-0922-mini.config
+  CONFIG_FILE: N1/Lede/2025-0922.config
   DIY_P1_SH: N1/Lede/diy-part1.sh
   DIY_P2_SH: N1/Lede/diy-part2.sh
   CUSTOM_FILES_DIR: N1/Lede/files
