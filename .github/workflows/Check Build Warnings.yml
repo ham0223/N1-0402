@@ -1,0 +1,48 @@
+# .github/workflows/check-warnings.yml
+name: Check Build Warnings
+
+on:
+  workflow_dispatch:  # 手动触发
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential libncurses5-dev zlib1g-dev \
+            gawk git gettext libssl-dev xsltproc rsync wget unzip python3
+
+      - name: Clone OpenWrt
+        run: |
+          git clone --depth=1 https://github.com/coolsnowwolf/lede openwrt
+          cd openwrt
+
+      - name: Update feeds
+        working-directory: openwrt
+        run: |
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+
+      - name: Run diy-part2.sh
+        working-directory: openwrt
+        run: |
+          bash $GITHUB_WORKSPACE/diy-part2.sh
+
+      - name: Collect warnings
+        working-directory: openwrt
+        run: |
+          echo "===== WARNING SCAN =====" 
+          make defconfig 2>&1 | grep -i warning | sort | uniq > warnings.txt
+          cat warnings.txt
+          echo "===== TOTAL: $(wc -l < warnings.txt) warnings ====="
+
+      - name: Upload warnings log
+        uses: actions/upload-artifact@v4
+        with:
+          name: warnings-log
+          path: openwrt/warnings.txt
