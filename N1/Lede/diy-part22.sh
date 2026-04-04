@@ -15,18 +15,13 @@ rm -rf package/feeds/telephony
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall package/passwall
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall-packages package/passwall-packages
 git clone https://github.com/Openwrt-Passwall/openwrt-passwall2 package/passwall2
-
 # SSR Plus+
 git clone https://github.com/fw876/helloworld --depth=1 package/ssr-plus
 # 删除 helloworld 中与 passwall-packages 重叠的依赖（以 passwall-packages 为准）
 rm -rf package/ssr-plus/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls}
 
 # 常用核心插件 (Nikki, OpenClash, Lucky, MosDNS, OpenList2)
-git clone https://github.com/nikkinikki-org/OpenWrt-nikki --depth=1 /tmp/nikki-tmp
-mv /tmp/nikki-tmp/nikki package/nikki
-mv /tmp/nikki-tmp/luci-app-nikki package/luci-app-nikki
-rm -rf /tmp/nikki-tmp
-
+git clone https://github.com/nikkinikki-org/OpenWrt-nikki --depth=1 package/nikki
 git clone https://github.com/vernesong/OpenClash --depth=1 package/openclash
 git clone https://github.com/gdy666/luci-app-lucky.git --depth=1 package/lucky
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 --depth=1 package/mosdns
