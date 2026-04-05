@@ -9,6 +9,13 @@ sed -i 's/LEDE/OpenWrt/g' package/base-files/files/bin/config_generate
 rm -rf feeds/packages/net/{xray-core,v2ray-geodata,sing-box,chinadns-ng,dns2socks,hysteria,ipt2socks,microsocks,naiveproxy,shadowsocks-libev,shadowsocks-rust,shadowsocksr-libev,simple-obfs,tcping,trojan-plus,tuic-client,v2ray-plugin,xray-plugin,geoview,shadow-tls,nikki,openlist}
 rm -rf feeds/luci/applications/luci-app-{passwall*,mosdns,lucky,nikki,openclash,openlist*}
 rm -rf package/feeds/telephony
+# 删除不需要的默认 LuCI 插件 (动态DNS、带宽监控、网络唤醒、KMS、UPnP)
+rm -rf feeds/luci/applications/luci-app-ddns
+rm -rf feeds/luci/applications/luci-app-nlbwmon
+rm -rf feeds/luci/applications/luci-app-wol
+rm -rf feeds/luci/applications/luci-app-ksmbd
+rm -rf feeds/luci/applications/luci-app-kms
+rm -rf feeds/luci/applications/luci-app-upnp
 
 # 3. 插件仓库拉取 (含官方 PassWall & 额外增强插件)
 # PassWall 官方最新版
