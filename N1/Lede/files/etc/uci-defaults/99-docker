@@ -1,0 +1,3 @@
+#!/bin/sh
+/etc/init.d/dockerd enable
+exit 0
