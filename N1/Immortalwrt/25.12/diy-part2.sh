@@ -52,6 +52,9 @@ git clone https://github.com/nikkinikki-org/OpenWrt-nikki --depth=1 package/nikk
 git clone https://github.com/vernesong/OpenClash --depth=1 package/openclash
 
 
+git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-timecontrol
+
+
 # 7. 修正 25.12 兼容层的按钮翻译
 if [ -f feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm ]; then
     sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
