@@ -1,4 +1,4 @@
-name: 25.12
+name: 25.12-g
 
 on:
   repository_dispatch:
@@ -8,7 +8,7 @@ env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: openwrt-25.12
   FEEDS_CONF: N1/Immortalwrt/25.12/TL-feeds.conf.default
-  CONFIG_FILE: N1/Immortalwrt/25.12/nan-25.12.config
+  CONFIG_FILE: N1/Immortalwrt/25.12/g.config
   DIY_P1_SH: N1/Immortalwrt/25.12/diy-part1.sh
   DIY_P2_SH: N1/Immortalwrt/25.12/diy-part2.sh
   CUSTOM_FILES_DIR: N1/Immortalwrt/25.12/files
@@ -17,7 +17,7 @@ env:
   UPLOAD_RELEASE: 'true'
   DEBIAN_FRONTEND: noninteractive
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
-  VERSION_TAG: '25.12'
+  VERSION_TAG: '25.12-g'
 
 jobs:
   build:
@@ -210,7 +210,7 @@ jobs:
             echo "- 常规更新发布"
           fi
         } > $DESC_FILE
-        echo "release_tag=N1-25.12_$(date +%Y%m%d)" >> $GITHUB_OUTPUT
+        echo "release_tag=N1-25.12-g_$(date +%Y%m%d)" >> $GITHUB_OUTPUT
         echo "release_date=$(date '+%Y-%m-%d %H:%M')" >> $GITHUB_OUTPUT
         echo "描述文件生成完成：$DESC_FILE"
         echo "::endgroup::"
