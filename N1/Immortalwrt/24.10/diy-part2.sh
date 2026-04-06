@@ -42,7 +42,7 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 --depth=1 package/mosdn
 git clone https://github.com/sbwml/luci-app-openlist2 --depth=1 package/openlist2
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki --depth=1 package/nikki
 git clone https://github.com/vernesong/OpenClash --depth=1 package/openclash
-git clone https://github.com/sirpdboy/luci-app-nft-timecontrol --depth=1 package/luci-app-nft-timecontrol
+git clone https://github.com/sirpdboy/luci-app-timecontrol --depth=1 package/luci-app-timecontrol
 
 
 # 6. 修正 25.12 兼容层的按钮翻译
