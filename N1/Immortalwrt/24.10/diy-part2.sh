@@ -43,10 +43,11 @@ git clone https://github.com/sbwml/luci-app-openlist2 --depth=1 package/openlist
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki --depth=1 package/nikki
 git clone https://github.com/vernesong/OpenClash --depth=1 package/openclash
 # git clone https://github.com/sirpdboy/luci-app-timecontrol --depth=1 package/luci-app-timecontrol
-git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package
+# git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package
+git clone https://github.com/sirpdboy/luci-app-timecontrol --depth=1 package/timecontrol
 
-# 2. 克隆作者的大合集仓库（这个库里才有名为 luci-app-nft-timecontrol 的文件夹）
-git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package
+# 克隆作者的大合集仓库（这个库里才有名为 luci-app-nft-timecontrol 的文件夹）
+# git clone --depth 1 https://github.com/sirpdboy/sirpdboy-package package/sirpdboy-package
 
 
 # 6. 修正 25.12 兼容层的按钮翻译
