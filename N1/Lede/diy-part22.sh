@@ -39,12 +39,3 @@ sed -i 's/REENTRANT -D_GNU_SOURCE/LARGEFILE64_SOURCE/g' feeds/packages/lang/perl
 # 5. 修正俩处错误的翻译
 sed -i 's/<%:Up%>/<%:Move up%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
 sed -i 's/<%:Down%>/<%:Move down%>/g' feeds/luci/modules/luci-compat/luasrc/view/cbi/tblsection.htm
-
-# 6. 修复 luci-app-dockerman 空值报错
-DOCKER_LUA_FILE="feeds/luci/applications/luci-app-dockerman/luasrc/model/cbi/dockerman/containers.lua"
-if [ -f "${DOCKER_LUA_FILE}" ]; then
-    sed -i 's/c\.State\.Running > 0/(c.State.Running or 0) > 0/g' "${DOCKER_LUA_FILE}"
-    sed -i 's/State\.Running > 0/(State.Running or 0) > 0/g'       "${DOCKER_LUA_FILE}"
-    sed -i 's/PublicPort > 0/(PublicPort or 0) > 0/g'               "${DOCKER_LUA_FILE}"
-fi
-
